@@ -1,7 +1,21 @@
 plugins {
     id("com.android.library")
     id("kotlin-android")
+    id("maven-publish")
+    id("signing")
+    id("org.jetbrains.dokka") version "1.7.20"
+    id("com.gladed.androidgitversion") version "0.4.14"
 }
+
+androidGitVersion {
+    tagPattern = "^v[0-9]+.*"
+}
+
+val PUBLISH_GROUP_ID: String by extra("se.warting.signature")
+val PUBLISH_VERSION: String by extra(androidGitVersion.name().replace("v", ""))
+val PUBLISH_ARTIFACT_ID by extra("signature-pad")
+
+apply(from = "${rootProject.projectDir}/gradle/publish-module.gradle")
 
 val composeVersion = "1.2.0-rc02"
 android {
