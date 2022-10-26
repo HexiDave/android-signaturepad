@@ -25,10 +25,6 @@ plugins {
     id("org.jetbrains.kotlinx.binary-compatibility-validator") version "0.10.1"
 }
 
-apiValidation {
-    ignoredProjects.add("app")
-}
-
 allprojects {
     apply(plugin = "io.gitlab.arturbosch.detekt")
 
@@ -75,5 +71,3 @@ tasks.named("dependencyUpdates", DependencyUpdatesTask::class.java).configure {
 task<Delete>("clean") {
     delete(rootProject.buildDir)
 }
-
-apply(from = "${rootDir}/gradle/publish-root.gradle")
