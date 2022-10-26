@@ -3,7 +3,6 @@ plugins {
     id("kotlin-android")
     id("kotlin-parcelize")
     id("maven-publish")
-    id("signing")
     id("com.gladed.androidgitversion") version "0.4.14"
 }
 

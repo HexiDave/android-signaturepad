@@ -2,7 +2,6 @@ plugins {
     id("com.android.library")
     id("kotlin-android")
     id("maven-publish")
-    id("signing")
     id("com.gladed.androidgitversion") version "0.4.14"
 }
 

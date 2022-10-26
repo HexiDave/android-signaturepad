@@ -71,5 +71,3 @@ tasks.named("dependencyUpdates", DependencyUpdatesTask::class.java).configure {
 task<Delete>("clean") {
     delete(rootProject.buildDir)
 }
-
-apply(from = "${rootDir}/gradle/publish-root.gradle")
