@@ -307,7 +307,7 @@ class SignaturePad(context: Context, attrs: AttributeSet?) : View(context, attrs
         val width = (imageWidth.toFloat() * scale).roundToInt()
         val height = (imageHeight.toFloat() * scale).roundToInt()
 
-        return mSvgBuilder.build(width, height)
+        return getSignatureSvg(width, height)
     }
 
     @ExperimentalSignatureApi
