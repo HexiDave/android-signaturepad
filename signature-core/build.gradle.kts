@@ -4,7 +4,6 @@ plugins {
     id("kotlin-parcelize")
     id("maven-publish")
     id("signing")
-    id("org.jetbrains.dokka") version "1.7.20"
     id("com.gladed.androidgitversion") version "0.4.14"
 }
 

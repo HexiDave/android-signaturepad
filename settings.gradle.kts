@@ -22,7 +22,6 @@ buildCache {
 //    }
 //}
 rootProject.name = "Signaturepad"
-include(":app")
 include(":signature-pad")
 include(":signature-view")
 include(":signature-core")
