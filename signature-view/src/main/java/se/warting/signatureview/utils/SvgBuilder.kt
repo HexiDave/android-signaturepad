@@ -10,7 +10,9 @@ internal class SvgBuilder {
         mCurrentPathBuilder = null
     }
 
-    fun build(width: Int, height: Int): String {
+    fun build(width: Int, height: Int) = build(width, height, width, height)
+
+    fun build(width: Int, height: Int, viewBoxWidth: Int, viewBoxHeight: Int): String {
         if (isPathStarted) {
             appendCurrentPath()
         }
@@ -28,9 +30,9 @@ internal class SvgBuilder {
             .append(" ")
             .append(0)
             .append(" ")
-            .append(width)
+            .append(viewBoxWidth)
             .append(" ")
-            .append(height)
+            .append(viewBoxHeight)
             .append("\">")
             .append("<g ")
             .append("stroke-linejoin=\"round\" ")

@@ -297,7 +297,11 @@ class SignaturePad(context: Context, attrs: AttributeSet?) : View(context, attrs
         return mSvgBuilder.build(width, height)
     }
 
-    fun getSignatureSvg(width: Int, height: Int): String = mSvgBuilder.build(width, height)
+    fun getSignatureSvg(width: Int, height: Int): String {
+        val viewBoxWidth = mSignatureTransparentBitmap!!.width
+        val viewBoxHeight = mSignatureTransparentBitmap!!.height
+        return mSvgBuilder.build(width, height, viewBoxWidth, viewBoxHeight)
+    }
 
     fun getSignatureSvg(scale: Float): String {
         val width = (imageWidth.toFloat() * scale).roundToInt()
