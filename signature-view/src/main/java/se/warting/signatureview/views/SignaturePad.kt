@@ -291,9 +291,6 @@ class SignaturePad(context: Context, attrs: AttributeSet?) : View(context, attrs
         return mSvgBuilder.build(width, height)
     }
 
-    /**
-     * Give explicit width/height for the SVG
-     */
     fun getSignatureSvg(width: Int, height: Int): String = mSvgBuilder.build(width, height)
 
     @ExperimentalSignatureApi

@@ -82,9 +82,6 @@ class SignaturePadAdapter(private val signaturePad: SignaturePad) {
         return signaturePad.getSignatureSvg()
     }
 
-    /**
-     * Give explicit width/height for the SVG
-     */
     fun getSignatureSvg(width: Int, height: Int): String =
         signaturePad.getSignatureSvg(width, height)
 
