@@ -68,6 +68,12 @@ class SignaturePadAdapter(private val signaturePad: SignaturePad) {
     val isEmpty: Boolean
         get() = signaturePad.isEmpty
 
+    val imageWidth: Int
+        get() = signaturePad.imageWidth
+
+    val imageHeight: Int
+        get() = signaturePad.imageHeight
+
     @Suppress("unused")
     fun getSignatureBitmap(): Bitmap {
         return signaturePad.getSignatureBitmap()
@@ -84,6 +90,8 @@ class SignaturePadAdapter(private val signaturePad: SignaturePad) {
 
     fun getSignatureSvg(width: Int, height: Int): String =
         signaturePad.getSignatureSvg(width, height)
+
+    fun getSignatureSvg(scale: Float): String = signaturePad.getSignatureSvg(scale)
 
     @ExperimentalSignatureApi
     fun getSignature(): Signature {

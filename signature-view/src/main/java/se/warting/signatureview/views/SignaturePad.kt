@@ -107,6 +107,12 @@ class SignaturePad(context: Context, attrs: AttributeSet?) : View(context, attrs
         super.onRestoreInstanceState(mutableState)
     }
 
+    val imageWidth: Int
+        get() = mSignatureTransparentBitmap?.width ?: 0
+
+    val imageHeight: Int
+        get() = mSignatureTransparentBitmap?.height ?: 0
+
     /**
      * Set the pen color from a given resource.
      *
@@ -292,6 +298,13 @@ class SignaturePad(context: Context, attrs: AttributeSet?) : View(context, attrs
     }
 
     fun getSignatureSvg(width: Int, height: Int): String = mSvgBuilder.build(width, height)
+
+    fun getSignatureSvg(scale: Float): String {
+        val width = (imageWidth.toFloat() * scale).roundToInt()
+        val height = (imageHeight.toFloat() * scale).roundToInt()
+
+        return mSvgBuilder.build(width, height)
+    }
 
     @ExperimentalSignatureApi
     fun getSignature(): Signature {
